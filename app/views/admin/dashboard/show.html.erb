@@ -16,6 +16,7 @@
         <div class="card-body">
           <h5 class="card-title">Categories</h5>
           <p class="card-text">There are <%= @categories %> categories in the database.</p>
+          <%= link_to "View Categories", [:admin, :categories], class: "btn btn-primary" %>
         </div>
       </div>
     </div>
