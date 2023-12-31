@@ -67,6 +67,25 @@
           <%= link_to cart_path, class: "nav-link " do %> <%= fa_icon "shopping-cart" %>
           My Cart (<%= cart.size %>) <% end %>
         </li>
+        
+       <% if current_user %>
+       <li class="nav-item ">
+       <span class="nav-link disabled text-light">
+         Signed in as <%= current_user.first_name %>
+       </span>
+       </li> 
+       <li class="nav-item">
+       <%= link_to "Logout", '/logout', class: "nav-link" %>
+       </li>
+      <% else %>
+      <li class="nav-item">
+       <%= link_to 'Login', '/login', class: "nav-link" %>
+        </li> 
+        <li class="nav-item">
+       <%= link_to 'Signup', '/signup', class: "nav-link" %>
+       </li> 
+      <% end %>
+     
       </ul>
     </div>
   </div>
